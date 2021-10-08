@@ -8,6 +8,7 @@ package com.grupo1.servidor_taller2.ws;
 import com.grupo1.servidor_taller2.DB.businessobject.JugadorBO;
 import com.grupo1.servidor_taller2.DB.valueobject.JugadorVO;
 import java.util.ArrayList;
+import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -32,31 +33,40 @@ public class JugadorWebService
     public boolean updateJ(@WebParam(name = "JugadorVO") JugadorVO jugador)
     {
         JugadorBO a = new JugadorBO();
+        System.out.println(jugador);
         
         return a.update(jugador);
     }
     
     @WebMethod(operationName = "eliminarJugador")
-    public boolean deleteJ(@WebParam(name = "JugadorVO") JugadorVO jugador)
+    public boolean deleteJ(@WebParam(name = "JugadorVO") String id)
     {
         JugadorBO a = new JugadorBO();
-        
+        JugadorVO jugador = new JugadorVO();
+        jugador.setId(id);
         return a.delete(jugador);
     }
     
     @WebMethod(operationName = "buscarporIdJugador")
-    public JugadorVO findByIdJ(@WebParam(name = "JugadorVO") JugadorVO jugador)
+    public JugadorVO findByIdJ(@WebParam(name = "JugadorVO") String id)
     {
         JugadorBO a = new JugadorBO();
-        
-        return a.findById(jugador);
+        System.out.println(a.findById(id));
+        return a.findById(id);
     }
     
     @WebMethod(operationName = "listarJugadores")
-    public ArrayList<JugadorVO> listJ(@WebParam(name = "Vacio") JugadorVO jugador)
+    public List<JugadorVO> listJ()
     {
         JugadorBO a = new JugadorBO();
         
         return a.list();
+    }
+    
+     @WebMethod(operationName = "sumar")
+    public int suma(@WebParam(name = "Vacio") int num)
+    {
+        
+        return 1 + num;
     }
 }

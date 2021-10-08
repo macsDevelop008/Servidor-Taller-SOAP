@@ -58,7 +58,8 @@ public class JugadorBO
         String apodo = jugadorVO.getApodo();
         String email = jugadorVO.getEmail();
         double estadoRegistro = jugadorVO.getEstadoRegistro();
-        Date fechaModificacion = jugadorVO.getFechaModificacion();
+        Date fechaModificacion = new Date();
+                //jugadorVO.getFechaModificacion();
         
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String strDateFormat = dateFormat.format(fechaModificacion).trim();
@@ -103,11 +104,11 @@ public class JugadorBO
         return result;
     }
     
-    public JugadorVO findById(JugadorVO jugadorVO) 
+    public JugadorVO findById(String id) 
     {
         ArrayList<JugadorVO> result = new ArrayList<JugadorVO>();
         
-        String sql = "SELECT * FROM "+ NOMBRE_TABLA_SQL + " WHERE id ="+ "'"+jugadorVO.getId()+"'";
+        String sql = "SELECT * FROM "+ NOMBRE_TABLA_SQL + " WHERE id ="+ "'"+id+"'";
         
         System.out.println(sql);
         ConnectionOracle conectionOracle = getInstance();

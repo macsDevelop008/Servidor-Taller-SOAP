@@ -44,7 +44,10 @@ public class PersonajeVO implements Serializable
     {
         this.id = id;
     }
-
+    public PersonajeVO() 
+    {
+        
+    }
     public PersonajeVO(String id_jugador, Date fechaModificacion) 
     {
         this.id_jugador = id_jugador;

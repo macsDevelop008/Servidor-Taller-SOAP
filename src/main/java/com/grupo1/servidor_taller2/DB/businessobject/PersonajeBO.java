@@ -34,7 +34,8 @@ public class PersonajeBO
         String idEspecie = personajeVO.getId_especie();
         String idJugador = personajeVO.getId_jugador();
         double estadoRegistro = personajeVO.getEstadoRegistro();
-        Date fechaModificacion = personajeVO.getFechaModificacion();
+        Date fechaModificacion = new Date();
+                //personajeVO.getFechaModificacion();
         
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String strDateFormat = dateFormat.format(fechaModificacion).trim();
@@ -64,7 +65,7 @@ public class PersonajeBO
         String idEspecie = personajeVO.getId_especie();
         String idJugador = personajeVO.getId_jugador();
         double estadoRegistro = personajeVO.getEstadoRegistro();
-        Date fechaModificacion = personajeVO.getFechaModificacion();
+        Date fechaModificacion = new Date();
         
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String strDateFormat = dateFormat.format(fechaModificacion).trim();

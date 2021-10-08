@@ -36,23 +36,25 @@ public class EspecieWebService {
     }
     
     @WebMethod(operationName = "eliminarEspecie")
-    public boolean deleteE(@WebParam(name = "EspecieVO") EspecieVO especie)
+    public boolean deleteE(@WebParam(name = "EspecieVO") String id)
     {
         EspecieBO a = new EspecieBO();
-        
+        EspecieVO especie = new EspecieVO();
+        especie.setId(id);
         return a.delete(especie);
     }
     
     @WebMethod(operationName = "buscarporIdEspecie")
-    public EspecieVO findByIdE(@WebParam(name = "EspecieVO") EspecieVO especie)
+    public EspecieVO findByIdE(@WebParam(name = "EspecieVO") String id)
     {
         EspecieBO a = new EspecieBO();
-        
+        EspecieVO especie = new EspecieVO();
+        especie.setId(id);
         return a.findById(especie);
     }
     
     @WebMethod(operationName = "listarEspecies")
-    public ArrayList<EspecieVO> listE(@WebParam(name = "Vacio") EspecieVO especie)
+    public ArrayList<EspecieVO> listE()
     {
         EspecieBO a = new EspecieBO();
         

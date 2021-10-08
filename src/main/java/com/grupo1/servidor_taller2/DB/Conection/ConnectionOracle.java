@@ -38,7 +38,7 @@ public class ConnectionOracle
     {
         if( conexionOracle == null)
         {
-            conexionOracle = new ConnectionOracle("miguel","123","xe");
+            conexionOracle = new ConnectionOracle("CAMILO","GARCIA","xe");
         }      
         return conexionOracle;
     }

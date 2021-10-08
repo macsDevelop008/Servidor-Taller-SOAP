@@ -37,6 +37,10 @@ public class JugadorVO implements Serializable
     public JugadorVO(String id) {
         this.id = id;
     }
+
+    public JugadorVO() {
+       
+    }
     
     public String getId() {
         return id;

@@ -37,23 +37,25 @@ public class PersonajeWebService
     }
     
     @WebMethod(operationName = "eliminarPersonaje")
-    public boolean deleteP(@WebParam(name = "PersonajeVO") PersonajeVO personaje)
+    public boolean deleteP(@WebParam(name = "PersonajeVO") String id)
     {
         PersonajeBO a = new PersonajeBO();
-        
+        PersonajeVO personaje = new PersonajeVO();
+        personaje.setId(id);
         return a.delete(personaje);
     }
     
     @WebMethod(operationName = "buscarporIdPersonaje")
-    public PersonajeVO findByIdP(@WebParam(name = "PersonajeVO") PersonajeVO personaje)
+    public PersonajeVO findByIdP(@WebParam(name = "PersonajeVO") String id)
     {
         PersonajeBO a = new PersonajeBO();
-        
+        PersonajeVO personaje = new PersonajeVO();
+        personaje.setId(id);
         return a.findById(personaje);
     }
     
     @WebMethod(operationName = "listarPersonaje")
-    public ArrayList<PersonajeVO> listP(@WebParam(name = "Vacio") PersonajeVO personaje)
+    public ArrayList<PersonajeVO> listP()
     {
         PersonajeBO a = new PersonajeBO();
         
