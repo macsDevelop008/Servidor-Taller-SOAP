@@ -34,11 +34,11 @@ public class ConnectionOracle
        conectar();
     }
     
-    public static ConnectionOracle getInstance(String pUs, String pPass, String pNombreDB)
+    public static ConnectionOracle getInstance(/*String pUs, String pPass, String pNombreDB*/)
     {
         if( conexionOracle == null)
         {
-            conexionOracle = new ConnectionOracle(pUs, pPass, pNombreDB);
+            conexionOracle = new ConnectionOracle("miguel","123","xe");
         }      
         return conexionOracle;
     }

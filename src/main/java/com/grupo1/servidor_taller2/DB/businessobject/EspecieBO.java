@@ -24,6 +24,7 @@ public class EspecieBO
     
     public final static String NOMBRE_TABLA_SQL = "especie";
     
+    
     public boolean insert(EspecieVO especieVO) 
     {
         boolean result = false;
@@ -41,7 +42,7 @@ public class EspecieBO
                 estadoRegistro+","+
                 "TO_DATE('"+ strDateFormat +"'"+","+ "'DD/MM/YYYY'))";
         System.out.println(sql);
-        ConnectionOracle conectionOracle = getInstance("miguel","123","xe");
+        ConnectionOracle conectionOracle = getInstance();
         result = conectionOracle.executeUpdateStatement(sql);
         
         return result;
@@ -66,7 +67,7 @@ public class EspecieBO
                         "WHERE id =" + "'"+id+"'";
         
         System.out.println(sql);
-        ConnectionOracle conectionOracle = getInstance("miguel","123","xe");
+        ConnectionOracle conectionOracle = getInstance();
         result = conectionOracle.executeUpdateStatement(sql);
         
         return result;
@@ -80,7 +81,7 @@ public class EspecieBO
         
         String sql = "DELETE FROM "+ NOMBRE_TABLA_SQL +" WHERE id ="+ "'"+id+"'";
         System.out.println(sql);
-        ConnectionOracle conectionOracle = getInstance("miguel","123","xe");
+        ConnectionOracle conectionOracle = getInstance();
         result = conectionOracle.executeUpdateStatement(sql);
         
         return result;
@@ -93,7 +94,7 @@ public class EspecieBO
         String sql = "SELECT * FROM "+ NOMBRE_TABLA_SQL;
         
         System.out.println(sql);
-        ConnectionOracle conectionOracle = getInstance("miguel","123","xe");
+        ConnectionOracle conectionOracle = getInstance();
         result = descomposeResultSet(conectionOracle.executeQueryStatement(sql));
         
         return result;
@@ -106,7 +107,7 @@ public class EspecieBO
         String sql = "SELECT * FROM "+ NOMBRE_TABLA_SQL + " WHERE id ="+"'"+especieVO.getId()+"'";
         
         System.out.println(sql);
-        ConnectionOracle conectionOracle = getInstance("miguel","123","xe");
+        ConnectionOracle conectionOracle = getInstance();
         result = descomposeResultSet(conectionOracle.executeQueryStatement(sql));
         
         return result.get(0);

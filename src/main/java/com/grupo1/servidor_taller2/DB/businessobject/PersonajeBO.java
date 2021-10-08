@@ -46,7 +46,7 @@ public class PersonajeBO
                 +"TO_DATE('"+ strDateFormat +"'"+","+ "'DD/MM/YYYY'))";
         
         System.out.println(sql);
-        ConnectionOracle conectionOracle = getInstance("miguel","123","xe");
+        ConnectionOracle conectionOracle = getInstance();
         result = conectionOracle.executeUpdateStatement(sql);
         
         return result;
@@ -78,7 +78,7 @@ public class PersonajeBO
                 "WHERE id="+"'"+id+"'";
         
         System.out.println(sql);
-        ConnectionOracle conectionOracle = getInstance("miguel","123","xe");
+        ConnectionOracle conectionOracle = getInstance();
         result = conectionOracle.executeUpdateStatement(sql);
         
         return result;
@@ -92,7 +92,7 @@ public class PersonajeBO
         
         String sql = "DELETE FROM "+ NOMBRE_TABLA_SQL +" WHERE id ="+ "'"+id+"'";
         System.out.println(sql);
-        ConnectionOracle conectionOracle = getInstance("miguel","123","xe");
+        ConnectionOracle conectionOracle = getInstance();
         result = conectionOracle.executeUpdateStatement(sql);
         
         return result;
@@ -105,7 +105,7 @@ public class PersonajeBO
         String sql = "SELECT * FROM "+ NOMBRE_TABLA_SQL;
         
         System.out.println(sql);
-        ConnectionOracle conectionOracle = getInstance("miguel","123","xe");
+        ConnectionOracle conectionOracle = getInstance();
         result = descomposeResultSet(conectionOracle.executeQueryStatement(sql));
         
         return result;
@@ -118,7 +118,7 @@ public class PersonajeBO
         String sql = "SELECT * FROM "+ NOMBRE_TABLA_SQL + " WHERE id ="+ "'"+personajeVO.getId()+"'";
         
         System.out.println(sql);
-        ConnectionOracle conectionOracle = getInstance("miguel","123","xe");
+        ConnectionOracle conectionOracle = getInstance();
         result = descomposeResultSet(conectionOracle.executeQueryStatement(sql));
         
         return result.get(0);
